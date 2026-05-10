@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  
+  --color-medical-primary: #071658;
+  --color-medical-dark: #050d36;
+  --color-medical-light: #9DDEF6;
+  --color-accent: #FED73A;
+  --color-accent-dark: #e5c134;
+  --color-brand-bg: #ffffff;
+  --color-magic-glow: rgba(7, 22, 88, 0.2);
+
+  --animate-gradient-slow: gradient-slow 8s linear infinite;
+
+  @keyframes gradient-slow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 antialiased font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-slate-900;
+  }
+}
+
+.editorial-skew {
+  @apply relative overflow-hidden;
+}
+
+.editorial-skew::before {
+  content: "";
+  @apply absolute top-0 right-0 w-1/3 h-full bg-medical-light/50 -skew-x-12 translate-x-24 -z-10 border-l border-medical-primary/5;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl;
+}
+
+.magic-hover {
+  @apply transition-all duration-500 hover:shadow-[0_0_40px_rgba(13,148,136,0.15)] hover:-translate-y-1;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-medical-primary via-accent to-medical-dark bg-[length:200%_auto] animate-gradient-slow;
+}
+
+.shimmer {
+  @apply relative overflow-hidden;
+}
+
+.shimmer::after {
+  content: "";
+  @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.pill-badge {
+  @apply px-4 py-1.5 bg-white border border-slate-200 rounded-full text-[10px] uppercase tracking-widest font-extrabold text-slate-800 shadow-sm transition-all hover:border-medical-primary hover:text-medical-primary hover:scale-105 cursor-default;
+}
