@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="relative">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-medical-primary z-[60] origin-left shadow-[0_0_15px_rgba(7,22,88,0.5)]"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-medical-primary z-60 origin-left shadow-[0_0_15px_rgba(7,22,88,0.5)]"
         style={{ scaleX }}
       />
       <Navbar />
@@ -44,7 +44,7 @@ export default function Home() {
               { label: 'Hospital\nTie-ups', value: '500+', icon: Building2 },
               { label: 'Years of\nExcellence', value: '15+', icon: Award }
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 shrink-0 transition-all hover:translate-y-[-2px] group">
+              <div key={i} className="flex items-center gap-4 shrink-0 transition-all hover:-translate-y-0.5 group">
                 <div className="text-3xl font-black text-white group-hover:text-accent transition-colors drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">{item.value}</div>
                 <div className="text-[10px] leading-tight uppercase font-bold text-slate-300 tracking-widest">
                   {item.label.split('\n').map((line, idx) => (
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="hidden lg:flex items-center gap-10">
             <div className="text-right">
               <p className="text-[10px] uppercase tracking-widest text-white/60 mb-1">Student Portal</p>
-              <Link href="/login" className="font-bold text-sm hover:text-accent transition-colors">Campus Login →</Link>
+              <Link href="/#" className="font-bold text-sm hover:text-accent transition-colors">Campus Login →</Link>
             </div>
             <div className="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5 group hover:border-white/20 transition-all cursor-pointer">
               <motion.div 
@@ -91,7 +91,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               className="relative"
             >
-              <div className="aspect-[4/5] bg-medical-light rounded-[3rem] p-4 lg:p-8 relative overflow-visible">
+              <div className="aspect-4/5 bg-medical-light rounded-3xl p-4 lg:p-8 relative overflow-visible">
                  <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl skew-x-1 transition-transform group hover:skew-x-0 cursor-pointer shimmer">
                     <Image 
                       src="/img/3.jpeg" 
@@ -104,7 +104,7 @@ export default function Home() {
                  <motion.div 
                    animate={{ y: [0, -10, 0] }}
                    transition={{ duration: 4, repeat: Infinity }}
-                   className="absolute top-12 -left-8 bg-medical-primary p-7 rounded-[2rem] shadow-2xl text-white transform -rotate-6 z-20 border-4 border-white"
+                   className="absolute top-12 -left-8 bg-medical-primary p-7 rounded-4xl shadow-2xl text-white transform -rotate-6 z-20 border-4 border-white"
                  >
                     <div className="text-4xl font-black mb-1">100%</div>
                     <div className="text-[10px] font-bold uppercase tracking-widest text-white/80">Placement Assured</div>
@@ -126,10 +126,10 @@ export default function Home() {
               
               <div className="grid sm:grid-cols-2 gap-x-10 gap-y-12">
                 {[
-                  { title: "Hands-on Practical Training", desc: "Access to advanced simulation labs and mandatory rotations." },
-                  { title: "Global Opportunities", desc: "Curriculum aligned with international career standards." },
-                  { title: "Personalized Mentoring", desc: "Dedicated faculty for career guidance and skill growth." },
-                  { title: "Scholarship Support", desc: "Merit-based scholarships and govt. scheme guidance." }
+                    { title: "Quality Education", desc: "Structured curriculum with experienced faculty" },
+                    { title: "Clinical Excellence", desc: "Hands-on training at Zydus Medical College and Hospital and Navdha Hospital" },
+                    { title: "Holistic Development", desc: "Focus on ethics, communication, and patient care" },
+                    { title: "Community Exposure", desc: "Training through CHCs and PHCs for real-world experience" }
                 ].map((feature, i) => (
                   <div key={i} className="group">
                     <div className="flex items-center gap-4 mb-4">
@@ -147,7 +147,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 className="mt-16 bg-slate-950 p-10 rounded-[3rem] flex flex-col sm:flex-row items-center justify-between gap-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-medical-primary/20 rounded-full blur-3xl -z-0 translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-medical-primary/20 rounded-full blur-3xl z-0 translate-x-1/2 -translate-y-1/2" />
                 <div className="relative z-10">
                   <p className="text-white text-2xl font-black mb-2 tracking-tight">Ready to Start?</p>
                   <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-black">Admissions window closing soon</p>
@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* Testimonial Section */}
       <section id="testimonials" className="py-32 bg-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-full h-full bg-medical-light/20 -skew-y-3 transform origin-right -z-0"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-medical-light/20 -skew-y-3 transform origin-right z-0"></div>
         <motion.div 
           animate={{ x: [0, 50, 0], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 20, repeat: Infinity }}

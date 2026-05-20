@@ -37,7 +37,7 @@ export default function Hero() {
           className="object-cover opacity-[0.15] grayscale contrast-125"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-medical-dark via-transparent to-medical-dark/90" />
+        <div className="absolute inset-0 bg-linear-to-b from-medical-dark via-transparent to-medical-dark/90" />
       </div>
 
       {/* Interactive Mouse Glow */}
@@ -107,23 +107,24 @@ export default function Hero() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="w-2.5 h-2.5 bg-medical-primary rounded-full shadow-[0_0_10px_rgba(13,148,136,0.6)]"
               />
-              INC & State Govt. Approved
+              Excellence in Education | Expertise in Care | Commitment to Society
             </motion.div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tighter text-white mb-8 drop-shadow-xl">
-              Building the <span className="text-accent relative inline-block group">
-                <span className="relative z-10">Next Era</span>
+              Shaping Compassionate Nurses.
+              <span className="text-accent relative inline-block group" style={{ marginLeft: 12 }}>
+                <span className="relative z-10" style={{ fontSize: '0.72em', display: 'inline-block' }}>Building Healthcare Leaders.</span>
                 <motion.span 
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 1.2, delay: 0.5 }}
                   className="absolute -bottom-1 left-0 h-4 bg-accent/20 rounded-full -z-10 transition-all group-hover:h-full group-hover:bg-accent/30"
                 />
-              </span> <br /> of Professionals
+              </span>
             </h1>
             
-            <p className="text-xl text-medical-light leading-relaxed mb-12 max-w-xl font-extrabold lg:text-2xl">
-              Join the top-rated institute designed for excellence. Empowering students with clinical mastery, practical rigor, and <span className="text-accent font-black border-b-2 border-accent/40">100% placement assurance</span>.
+            <p className="text-xl text-medical-light leading-relaxed mb-12 max-w-xl font-extrabold lg:text-2xl" style={{ fontSize: '0.95em' }}>
+              Sunrise College of Nursing is a premier institution dedicated to nurturing skilled, confident, and compassionate nursing professionals equipped to meet the evolving healthcare needs of society.
             </p>
 
             <div className="flex flex-wrap gap-6 mb-16">

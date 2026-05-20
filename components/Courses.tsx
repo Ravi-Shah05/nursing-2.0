@@ -94,7 +94,7 @@ export default function Courses() {
                 </div>
 
                 <Link 
-                  href={`/admissions?course=${course.title}`}
+                  href={`/contact?course=${course.title}`}
                   className="w-full flex items-center justify-center py-5 rounded-2xl bg-slate-900 text-white font-black group-hover:bg-medical-primary transition-all shadow-2xl shadow-slate-900/10 uppercase tracking-widest text-xs"
                 >
                   Apply Now <ArrowRight className="ml-3 w-4 h-4 transition-transform group-hover:translate-x-1" />

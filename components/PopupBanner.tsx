@@ -18,12 +18,12 @@ export default function PopupBanner() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative w-full max-w-lg bg-white rounded-[2rem] overflow-hidden shadow-2xl"
+            className="relative w-full max-w-lg bg-white rounded-4xl overflow-hidden shadow-2xl"
           >
             {/* Close Button */}
             <button 
@@ -42,7 +42,7 @@ export default function PopupBanner() {
                   fill 
                   className="object-cover opacity-60"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-medical-dark via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-medical-dark via-transparent to-transparent" />
                 
                 <div className="absolute bottom-6 left-8 right-8">
                   <div className="flex items-center gap-3 mb-3">

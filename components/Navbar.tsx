@@ -72,8 +72,8 @@ export default function Navbar() {
                 Enquire
               </a>
                 <Link 
-                  href="/admissions"
-                  className="bg-accent hover:bg-accent-dark text-medical-primary px-5 lg:px-8 py-2.5 lg:py-3 rounded-full text-[11px] lg:text-sm font-black shadow-xl shadow-accent/20 transition-all transform hover:scale-105 uppercase tracking-[0.1em] whitespace-nowrap border-b-4 border-accent-dark"
+                  href="/contact"
+                  className="bg-accent hover:bg-accent-dark text-medical-primary px-5 lg:px-8 py-2.5 lg:py-3 rounded-full text-[11px] lg:text-sm font-black shadow-xl shadow-accent/20 transition-all transform hover:scale-105 uppercase tracking-widest whitespace-nowrap border-b-4 border-accent-dark"
                 >
                   <span className="hidden sm:inline lg:hidden xl:inline">Admissions </span>2026-27
                 </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
                   <Phone className="w-4 h-4 mr-2" /> Call
                 </a>
                     <Link 
-                      href="/admissions"
+                      href="/contact"
                       className="flex items-center justify-center p-5 rounded-2xl bg-medical-primary text-white font-black text-[12px] uppercase tracking-widest shadow-2xl shadow-medical-primary/30"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
