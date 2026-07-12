@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'Sunrise College of Nursing | Top Nursing College & School',
-  description: 'Join the premier nursing college. Admissions open for ANM, GNM, and BSc Nursing. Practical training, top placements, and world-class facilities.',
+  title: 'Sunrise College of Nursing, Dahod | Nursing College & School',
+  description: 'Sunrise College of Nursing, Dahod — approved by the Gujarat Nursing Council & affiliated to Shri Govind Guru University. Admissions open for M.Sc, P.B.B.Sc, B.Sc Nursing, GNM, ANM & D.M.L.T, plus Sunrise Public School (Grades 1-12).',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

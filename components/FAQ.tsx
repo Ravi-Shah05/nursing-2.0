@@ -12,12 +12,12 @@ const faqData = [
       {
         id: 'adm-1',
         question: 'What are the eligibility criteria for B.Sc. Nursing?',
-        answer: 'Candidates must have passed 10+2 with Physics, Chemistry, Biology, and English (PCBE) with 45% aggregate marks (40% for SC/ST). The minimum age should be 17 years as of 31st December of the admission year.'
+        answer: 'Candidates must have passed 10+2 (Science) with Physics, Chemistry, Biology and English, with the minimum marks prescribed by the Indian Nursing Council and Gujarat Nursing Council norms.'
       },
       {
         id: 'adm-2',
         question: 'How can I apply for admission?',
-        answer: 'You can apply online through our website or visit our campus for direct registration. Admission is based on academic merit and, in some cases, an entrance examination followed by counseling.'
+        answer: 'Submit the enquiry form, call our helpline, or visit our campus at Delsar, Dahod for direct counselling and registration.'
       },
     ]
   },
@@ -27,8 +27,8 @@ const faqData = [
     questions: [
       {
         id: 'crs-1',
-        question: 'What nursing courses do you offer?',
-        answer: 'We offer B.Sc. Nursing (4 years), GNM (3 years), and ANM (2 years). All courses are recognized by the Indian Nursing Council (INC) and State Nursing Council.'
+        question: 'What nursing programs do you offer?',
+        answer: 'M.Sc. Nursing, P.B.B.Sc. Nursing, B.Sc. Nursing, GNM, ANM and D.M.L.T — conducted per Indian Nursing Council & Gujarat Nursing Council guidelines and affiliated to Shri Govind Guru University.'
       }
     ]
   },
@@ -38,8 +38,8 @@ const faqData = [
     questions: [
       {
         id: 'cmp-1',
-        question: 'Do you provide hostel facilities?',
-        answer: 'Yes, we provide safe and comfortable on-campus hostel facilities for both male and female students, with 24/7 security and clean dining areas.'
+        question: 'What facilities are available on campus?',
+        answer: 'AC smart classrooms, digital projectors, science laboratories, a computer lab, library, nursing practical labs, sports & cultural activities, transportation and CCTV-secured, student-friendly premises.'
       }
     ]
   },
@@ -49,8 +49,8 @@ const faqData = [
     questions: [
       {
         id: 'fee-1',
-        question: 'Are scholarship options available?',
-        answer: 'Yes, we offer merit-based scholarships for toppers and assist students in applying for various State and Central Government scholarships.'
+        question: 'What is the fee structure?',
+        answer: 'The fee structure varies by program. Please contact our admission office for a detailed breakdown of tuition and other charges.'
       }
     ]
   }

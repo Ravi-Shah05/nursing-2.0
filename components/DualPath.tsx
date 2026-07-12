@@ -31,11 +31,11 @@ export default function DualPath() {
              <div className="relative z-10">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-medical-light text-medical-primary rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-8 border border-medical-primary/20">
                   <span className="w-1.5 h-1.5 bg-medical-primary rounded-full animate-pulse" />
-                  Playgroup to Xth
+                  Grades 1 to 12
                 </div>
-                <h3 className="text-4xl lg:text-6xl font-black mb-6 text-slate-900 tracking-tighter leading-none group-hover:text-medical-primary transition-all duration-500 transform group-hover:scale-[1.02]">Sunrise <br />International School</h3>
+                <h3 className="text-4xl lg:text-6xl font-black mb-6 text-slate-900 tracking-tighter leading-none group-hover:text-medical-primary transition-all duration-500 transform group-hover:scale-[1.02]">Sunrise <br />Public School</h3>
                 <p className="text-slate-700 mb-10 max-w-sm text-sm leading-relaxed font-bold">
-                  Providing a nurturing environment from Playgroup to Matriculation. Focus on holistic growth and modern global learning methods.
+                  English &amp; Gujarati medium education from Grade 1 to 12, with Science, Commerce &amp; Arts streams, smart classrooms, and expert academic collaborations.
                 </p>
                 <Link 
                   href="/school" 
@@ -66,9 +66,9 @@ export default function DualPath() {
                   <span className="w-1.5 h-1.5 bg-medical-primary rounded-full animate-pulse" />
                   Degrees & Diplomas
                 </div>
-                <h3 className="text-4xl lg:text-6xl font-black mb-6 text-slate-900 tracking-tighter leading-none group-hover:text-medical-primary transition-all duration-500 transform group-hover:scale-[1.02]">Nursing & <br />Healthcare</h3>
+                <h3 className="text-4xl lg:text-6xl font-black mb-6 text-slate-900 tracking-tighter leading-none group-hover:text-medical-primary transition-all duration-500 transform group-hover:scale-[1.02]">Nursing &amp; <br />Healthcare</h3>
                 <p className="text-slate-700 mb-10 max-w-sm text-sm leading-relaxed font-bold text-balance">
-                   Professional nursing programs (B.Sc, GNM, ANM) with guaranteed placement and 100% intensive clinical training in super-specialty hospitals.
+                   Professional programs — M.Sc, P.B.B.Sc, B.Sc Nursing, GNM, ANM &amp; D.M.L.T — with 100% clinical exposure at Zydus &amp; Navadha hospitals and community health centers.
                 </p>
                 <Link 
                   href="/nursing" 

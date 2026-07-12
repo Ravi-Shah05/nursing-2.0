@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronRight, Bell } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { site } from '@/lib/site';
 
 export default function PopupBanner() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,10 +38,10 @@ export default function PopupBanner() {
             <div className="flex flex-col">
               {/* Image Header with Logo/Title */}
               <div className="relative h-64 md:h-80 w-full bg-medical-primary overflow-hidden">
-                <Image 
-                  src="/img/post.jpeg" 
-                  alt="Sunrise College Admission 2026" 
-                  fill 
+                <Image
+                  src="/img/campus-nursing.jpeg"
+                  alt="Sunrise College of Nursing, Dahod — Admissions 2026-27"
+                  fill
                   className="object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-medical-dark via-transparent to-transparent" />
@@ -60,29 +62,30 @@ export default function PopupBanner() {
               {/* Content Panel */}
               <div className="p-8 md:p-10 space-y-6">
                 <p className="text-slate-600 font-bold leading-relaxed">
-                  Join Sunrise College of Nursing for professional excellence. Limited seats available for <span className="text-medical-primary font-black">B.Sc Nursing, GNM, and ANM</span> courses.
+                  Join Sunrise College of Nursing, Dahod for professional excellence. Seats available for <span className="text-medical-primary font-black">M.Sc, P.B.B.Sc, B.Sc Nursing, GNM, ANM &amp; D.M.L.T</span> programs.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex flex-col justify-center">
-                    <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Courses</p>
-                    <p className="text-sm font-black text-slate-800">UG & Diplomas</p>
+                    <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Programs</p>
+                    <p className="text-sm font-black text-slate-800">UG · PG · Diplomas</p>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex flex-col justify-center">
-                    <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Scholarships</p>
-                    <p className="text-sm font-black text-slate-800">Upto 50% Off</p>
+                    <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Approved By</p>
+                    <p className="text-sm font-black text-slate-800">Gujarat Nursing Council</p>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <button 
+                  <Link
+                    href="/contact"
                     onClick={() => setIsOpen(false)}
                     className="flex-1 bg-accent hover:bg-accent-dark text-medical-primary px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-accent/20 flex items-center justify-center gap-2"
                   >
                     Apply Now
                     <ChevronRight className="w-4 h-4" />
-                  </button>
-                  <button 
+                  </Link>
+                  <button
                     onClick={() => setIsOpen(false)}
                     className="flex-1 bg-white border-2 border-slate-100 text-slate-600 hover:border-medical-primary hover:text-medical-primary px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all"
                   >
@@ -91,7 +94,7 @@ export default function PopupBanner() {
                 </div>
 
                 <p className="text-center text-[10px] text-slate-400 font-bold uppercase tracking-widest pt-2">
-                  Contact Counselor: +91 12345 67890
+                  Contact Counselor: {site.phoneDisplay}
                 </p>
               </div>
             </div>

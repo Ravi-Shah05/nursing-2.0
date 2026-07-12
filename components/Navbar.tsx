@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Phone, MessageCircle, ChevronRight, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
+import { site } from '@/lib/site';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,9 +22,10 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Nursing College', href: '/nursing' },
+    { name: 'Nursing', href: '/nursing' },
     { name: 'School', href: '/school' },
     { name: 'Facilities', href: '/facilities' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -38,23 +40,34 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full h-full flex items-center">
         <div className="flex justify-between items-center h-16 w-full">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center shrink-0 mr-4 group" aria-label="Sunrise College of Nursing, Dahod — Home">
+            {/* Emblem only on very small screens */}
             <Image
-              src="/img/logo.png"
-              alt="Sunrise College Logo"
-              width={64}
-              height={64}
-              className="w-16 h-16 object-cover object-left shrink-0"
+              src="/img/logo-mark.png"
+              alt="Sunrise College of Nursing, Dahod"
+              width={48}
+              height={48}
+              className="h-10 w-auto object-contain sm:hidden transition-transform group-hover:scale-105"
+              priority
+            />
+            {/* Full horizontal wordmark from sm up — single image, never wraps */}
+            <Image
+              src="/img/logo-wordmark.png"
+              alt="Sunrise College of Nursing, Dahod"
+              width={587}
+              height={147}
+              className="hidden sm:block h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              priority
             />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-x-5 xl:gap-x-7">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 href={link.href}
-                className="text-[12px] font-black transition-colors hover:text-medical-primary text-slate-600 uppercase tracking-widest"
+                className="text-[11px] xl:text-[12px] font-black transition-colors hover:text-medical-primary text-slate-600 uppercase tracking-wider whitespace-nowrap"
               >
                 {link.name}
               </Link>
@@ -63,17 +76,23 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4 ml-auto">
             {/* CTA Group - Hidden on small mobile, visible from md up */}
-            <div className="hidden md:flex items-center gap-4 lg:gap-6">
-              <a 
-                href="tel:+911234567890" 
-                className="hidden xl:flex items-center gap-2 text-xs font-black text-medical-primary hover:text-medical-dark transition-colors uppercase tracking-widest"
+            <div className="hidden md:flex items-center gap-4 lg:gap-5">
+              <a
+                href={site.phoneHref}
+                className="hidden 2xl:flex items-center gap-2.5 pl-2 pr-4 py-1.5 rounded-full border border-slate-200 hover:border-medical-primary transition-colors group whitespace-nowrap"
+                aria-label={`Call admissions ${site.phoneDisplay}`}
               >
-                <Phone className="w-3.5 h-3.5" />
-                Enquire
+                <span className="w-8 h-8 rounded-full bg-medical-light flex items-center justify-center text-medical-primary group-hover:bg-medical-primary group-hover:text-white transition-colors shrink-0">
+                  <Phone className="w-4 h-4" />
+                </span>
+                <span className="flex flex-col leading-none">
+                  <span className="text-[8px] font-black uppercase tracking-[0.16em] text-slate-400">Admissions Helpline</span>
+                  <span className="text-[13px] font-black text-medical-primary leading-tight mt-0.5">{site.phoneDisplay}</span>
+                </span>
               </a>
-                <Link 
+                <Link
                   href="/contact"
-                  className="bg-accent hover:bg-accent-dark text-medical-primary px-5 lg:px-8 py-2.5 lg:py-3 rounded-full text-[11px] lg:text-sm font-black shadow-xl shadow-accent/20 transition-all transform hover:scale-105 uppercase tracking-widest whitespace-nowrap border-b-4 border-accent-dark"
+                  className="bg-accent hover:bg-accent-dark text-medical-primary px-5 lg:px-7 py-2.5 lg:py-3 rounded-full text-[11px] lg:text-sm font-black shadow-xl shadow-accent/20 transition-all transform hover:scale-105 uppercase tracking-widest whitespace-nowrap border-b-4 border-accent-dark"
                 >
                   <span className="hidden sm:inline lg:hidden xl:inline">Admissions </span>2026-27
                 </Link>
@@ -81,7 +100,7 @@ export default function Navbar() {
 
             {/* Mobile toggle */}
             <div className="lg:hidden flex items-center space-x-4">
-               <a href="https://wa.me/911234567890" className="text-accent hover:scale-110 transition-transform">
+               <a href={site.whatsapp} className="text-accent hover:scale-110 transition-transform">
                   <MessageCircle className="w-6 h-6 fill-accent/10" />
                </a>
               <button 
@@ -131,8 +150,8 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.05 }}
                 className="pt-6 grid grid-cols-2 gap-4"
               >
-                <a 
-                  href="tel:+911234567890"
+                <a
+                  href={site.phoneHref}
                   className="flex items-center justify-center p-4 rounded-2xl border-2 border-slate-100 text-slate-950 font-black text-[10px] uppercase tracking-widest hover:border-medical-primary transition-all"
                 >
                   <Phone className="w-4 h-4 mr-2" /> Call

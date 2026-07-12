@@ -2,13 +2,14 @@
 
 import { motion } from 'motion/react';
 import { MessageCircle, Phone, Calendar } from 'lucide-react';
+import { site } from '@/lib/site';
 
 export default function FloatingCTAs() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/911234567890"
+        href={site.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
@@ -21,7 +22,7 @@ export default function FloatingCTAs() {
 
       {/* Call Button (Mobile Only) */}
       <motion.a
-        href="tel:+911234567890"
+        href={site.phoneHref}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="flex lg:hidden items-center justify-center w-14 h-14 bg-medical-primary text-white rounded-full shadow-2xl hover:bg-medical-dark transition-colors"
@@ -31,7 +32,10 @@ export default function FloatingCTAs() {
       </motion.a>
 
       {/* Book Visit (Desktop/Tablet) */}
-      <motion.div
+      <motion.a
+        href={site.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         className="hidden lg:flex items-center bg-white border border-slate-200 rounded-full pl-6 pr-1 pt-1 pb-1 shadow-2xl group cursor-pointer hover:border-medical-primary transition-all"
@@ -40,7 +44,7 @@ export default function FloatingCTAs() {
         <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center group-hover:scale-105 transition-transform">
            <Calendar className="w-5 h-5 text-medical-dark" />
         </div>
-      </motion.div>
+      </motion.a>
     </div>
   );
 }

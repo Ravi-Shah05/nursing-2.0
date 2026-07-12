@@ -5,3 +5,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Source materials (kept locally, not deployed)
+sunrise website/

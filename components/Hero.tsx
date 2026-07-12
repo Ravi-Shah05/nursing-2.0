@@ -4,15 +4,17 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { motion } from 'motion/react';
-import { ChevronRight, ShieldCheck, Award, Users } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useMousePosition } from '@/hooks/use-mouse-position';
+import { site } from '@/lib/site';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name is required'),
   phone: z.string().min(10, 'Valid phone number required'),
-  course: z.enum(['BSc Nursing', 'GNM', 'ANM', 'School Admission']),
+  course: z.enum(['M.Sc Nursing', 'P.B.B.Sc Nursing', 'B.Sc Nursing', 'GNM', 'ANM', 'D.M.L.T', 'School Admission']),
 });
 
 export default function Hero() {
@@ -30,10 +32,10 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 editorial-skew bg-medical-primary overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/img/1.jpeg" 
-          alt="Modern Hospital Background" 
-          fill 
+        <Image
+          src="/img/campus-nursing.jpeg"
+          alt="Sunrise College of Nursing campus, Dahod"
+          fill
           className="object-cover opacity-[0.15] grayscale contrast-125"
           priority
         />
@@ -128,16 +130,16 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-6 mb-16">
-              <button className="flex items-center gap-4 bg-accent text-medical-primary px-10 py-5 rounded-2xl font-black shadow-2xl shadow-accent/20 hover:bg-white transition-all group relative overflow-hidden">
+              <Link href="/nursing" className="flex items-center gap-4 bg-accent text-medical-primary px-10 py-5 rounded-2xl font-black shadow-2xl shadow-accent/20 hover:bg-white transition-all group relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2 uppercase tracking-widest text-xs">
                   Explore Courses
                   <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </span>
                 <div className="absolute inset-0 bg-white/10 translate-y-full transition-transform group-hover:translate-y-0" />
-              </button>
-              <button className="flex items-center gap-3 bg-white/10 border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-white hover:bg-white hover:text-medical-primary transition-all group shadow-sm uppercase tracking-widest text-xs">
+              </Link>
+              <a href={site.whatsapp} className="flex items-center gap-3 bg-white/10 border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-white hover:bg-white hover:text-medical-primary transition-all group shadow-sm uppercase tracking-widest text-xs">
                 Book Campus Visit
-              </button>
+              </a>
             </div>
 
             {/* Popular Courses Pills */}
@@ -198,10 +200,13 @@ export default function Hero() {
                       className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3.5 text-sm focus:outline-none focus:border-medical-primary transition-all appearance-none cursor-pointer"
                     >
                       <option value="" disabled>Interested Course</option>
-                      <option value="BSc Nursing">B.Sc Nursing (4 Years)</option>
+                      <option value="M.Sc Nursing">M.Sc Nursing (2 Years)</option>
+                      <option value="P.B.B.Sc Nursing">P.B.B.Sc Nursing (2 Years)</option>
+                      <option value="B.Sc Nursing">B.Sc Nursing (4 Years)</option>
                       <option value="GNM">GNM Diploma (3 Years)</option>
-                      <option value="ANM">ANM Diploma (2 Years)</option>
-                      <option value="School Admission">Sunrise International School</option>
+                      <option value="ANM">ANM Certificate (2 Years)</option>
+                      <option value="D.M.L.T">D.M.L.T (2 Years)</option>
+                      <option value="School Admission">Sunrise Public School (1-12)</option>
                     </select>
                   </div>
 
@@ -215,7 +220,7 @@ export default function Hero() {
                
                <div className="mt-8 pt-6 border-t border-slate-50 flex items-center justify-between text-[10px] text-slate-400 font-medium uppercase tracking-tighter">
                   <span>Available on Whatsapp</span>
-                  <a href="https://wa.me/911234567890" className="text-accent flex items-center gap-1 font-bold hover:text-accent-dark transition-colors">
+                  <a href={site.whatsapp} className="text-accent flex items-center gap-1 font-bold hover:text-accent-dark transition-colors">
                     CHAT NOW
                   </a>
                </div>

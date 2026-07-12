@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Target, Eye, Heart, Award } from 'lucide-react';
-import Image from 'next/image';
+import { Target, Heart } from 'lucide-react';
+import Link from 'next/link';
 
 const missionPoints = [
-  "Providing quality nursing education in accordance with standards laid down by the Indian Nursing Council and Gujarat Nursing Council.",
+  "Providing quality nursing education in accordance with the standards of the Indian Nursing Council and Gujarat Nursing Council.",
   "Preparing graduates to deliver holistic, evidence-based nursing care in diverse healthcare settings.",
-  "Promoting research activities and critical thinking to improve nursing practice and healthcare outcomes."
+  "Promoting research activities and critical thinking to improve nursing practice and outcomes.",
+  "Developing professional competence, leadership skills, and accountability among students.",
+  "Instilling ethical values, compassion, and social responsibility in the nursing profession.",
+  "Encouraging participation in community health services and national health programs.",
+  "Supporting lifelong learning and continuing nursing education."
 ];
 
 export default function AboutVision() {
@@ -82,9 +86,9 @@ export default function AboutVision() {
               ))}
             </ol>
 
-            <div className="mt-6 flex items-center gap-4">
-              <button className="px-5 py-3 bg-accent text-white rounded-2xl font-bold shadow hover:-translate-y-0.5 transition-transform">Download Prospectus</button>
-              <button className="px-5 py-3 border border-slate-200 rounded-2xl text-slate-700 font-semibold hover:bg-white/50 transition">Contact Admissions</button>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <Link href="/nursing" className="px-5 py-3 bg-medical-primary text-white rounded-2xl font-bold shadow hover:-translate-y-0.5 transition-transform">Explore Programs</Link>
+              <Link href="/contact" className="px-5 py-3 border border-slate-200 rounded-2xl text-slate-700 font-semibold hover:bg-white/50 transition">Contact Admissions</Link>
             </div>
           </motion.div>
         </div>

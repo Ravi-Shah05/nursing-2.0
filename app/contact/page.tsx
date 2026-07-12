@@ -6,7 +6,7 @@ import FloatingCTAs from '@/components/FloatingCTAs';
 import FAQ from '@/components/FAQ';
 import { Mail, Phone, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { useForm } from 'react-hook-form';
-import { motion } from 'motion/react';
+import { site } from '@/lib/site';
 
 export default function Contact() {
   const { register, handleSubmit } = useForm();
@@ -44,7 +44,7 @@ export default function Contact() {
                   <div className="ml-6">
                     <h4 className="text-lg font-bold text-medical-dark mb-1">Campus Address</h4>
                     <p className="text-slate-600 text-sm leading-relaxed">
-                      123 Sunrise Campus, Medical Road,<br />District City, State - 456789 (India)
+                      {site.address.line1}<br />{site.address.line2}
                     </p>
                   </div>
                 </div>
@@ -55,8 +55,8 @@ export default function Contact() {
                   </div>
                   <div className="ml-6">
                     <h4 className="text-lg font-bold text-medical-dark mb-1">Call for Admissions</h4>
-                    <p className="text-slate-600 text-sm">+91 12345 67890</p>
-                    <p className="text-slate-600 text-sm">+91 98765 43210</p>
+                    <a href={site.phoneHref} className="text-slate-600 text-sm block hover:text-medical-primary">{site.phoneDisplay}</a>
+                    <a href={site.whatsapp} className="text-slate-600 text-sm hover:text-medical-primary">WhatsApp Available</a>
                   </div>
                 </div>
 
@@ -66,8 +66,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-6">
                     <h4 className="text-lg font-bold text-medical-dark mb-1">Email Support</h4>
-                    <p className="text-slate-600 text-sm underline">info@sunrisecollege.com</p>
-                    <p className="text-slate-600 text-sm">admissions@sunrisecollege.com</p>
+                    <a href={`mailto:${site.email}`} className="text-slate-600 text-sm underline break-all hover:text-medical-primary">{site.email}</a>
                   </div>
                 </div>
 
@@ -93,7 +92,7 @@ export default function Contact() {
                       <p className="text-xs text-white/60">Chat with a counselor now</p>
                     </div>
                   </div>
-                  <a href="https://wa.me/911234567890" className="bg-accent text-medical-primary px-6 py-2 rounded-xl font-bold text-sm">WhatsApp</a>
+                  <a href={site.whatsapp} className="bg-accent text-medical-primary px-6 py-2 rounded-xl font-bold text-sm">WhatsApp</a>
                </div>
             </div>
 
@@ -136,13 +135,15 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Embed Placeholder */}
-      <section className="h-[400px] bg-slate-200 w-full relative overflow-hidden grayscale">
-         <div className="absolute inset-0 flex items-center justify-center text-slate-500 flex-col bg-slate-100">
-           <MapPin className="w-12 h-12 mb-4" />
-           <p className="font-bold">Google Maps Integration</p>
-           <p className="text-xs">Location: 24.5712, 73.6915</p>
-         </div>
+      {/* Map Embed */}
+      <section className="h-[420px] w-full relative overflow-hidden">
+        <iframe
+          title="Sunrise Group of Education, Dahod location"
+          src="https://maps.google.com/maps?q=Chakaliya%20Road%2C%20Delsar%2C%20Dahod%2C%20Gujarat%20389151&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </section>
 
       <FAQ />

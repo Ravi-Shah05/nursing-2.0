@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(command -v pdftotext)",
+      "Bash(command -v textutil)",
+      "Bash(textutil -convert txt \"Sunrise School.docx\" -output /tmp/sunrise_school.txt)",
+      "Bash(python3 -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python3 -c \"import PyPDF2; print\\('PyPDF2 ok'\\)\")",
+      "Bash(python3 -c \"import pdfplumber; print\\('pdfplumber ok'\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(sips -s format jpeg ravi-pancholi.png --out ravi-pancholi.jpeg)",
+      "Bash(sips -s format jpeg narendra-soni.png --out narendra-soni.jpeg)",
+      "Bash(rm ravi-pancholi.png narendra-soni.png)",
+      "Bash(sips -Z 1400 ravi-pancholi.jpeg narendra-soni.jpeg)",
+      "Bash(awk '{print $5,$9}')",
+      "Bash(curl -s http://localhost:3111)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"public/img/logo-nursing.jpeg\")",
+      "Bash(sips -g pixelWidth -g pixelHeight -g hasAlpha \"public/img/logo-school.png\")",
+      "Bash(sips -g hasAlpha \"sunrise website/logo/Sunrise NEW LOGO.png\")",
+      "Bash(command -v magick convert)",
+      "Bash(ls /System/Library/Fonts/ | grep -iE \"helvetica|avenir|arial\" ; echo \"---supplemental---\"; ls \"/System/Library/Fonts/Supplemental/\" 2>/dev/null | grep -iE \"arial|avenir|futura|gill|helvetica\" | head; echo \"---check Outfit in project---\"; find /Users/ravishah/Documents/nursing/node_modules/.cache /Users/ravishah/Documents/nursing/.next -iname \"*outfit*\" 2>/dev/null | head)",
+      "Read(//System/Library/Fonts/**)",
+      "Read(//System/Library/Fonts/Supplemental/**)",
+      "Bash(pkill -9 -f \"next start\")",
+      "Bash(pkill -9 -f \"next-server\")"
+    ]
+  }
+}

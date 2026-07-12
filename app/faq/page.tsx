@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Plus, Minus, Search, HelpCircle, BookOpen, GraduationCap, Building2, Wallet } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { site } from '@/lib/site';
 
 const faqData = [
   {
@@ -14,17 +15,17 @@ const faqData = [
       {
         id: 'adm-1',
         question: 'What are the eligibility criteria for B.Sc. Nursing?',
-        answer: 'Candidates must have passed 10+2 with Physics, Chemistry, Biology, and English (PCBE) with 45% aggregate marks (40% for SC/ST). The minimum age should be 17 years as of 31st December of the admission year.'
+        answer: 'Candidates must have passed 10+2 (Science) with Physics, Chemistry, Biology and English, with the minimum marks prescribed by the Indian Nursing Council and Gujarat Nursing Council norms.'
       },
       {
         id: 'adm-2',
         question: 'How can I apply for admission?',
-        answer: 'You can apply online through our website or visit our campus for direct registration. Admission is based on academic merit and, in some cases, an entrance examination followed by counseling.'
+        answer: 'You can submit the enquiry form on this website, call our admission helpline, or visit our campus at Delsar, Dahod for direct counselling and registration. Admission is guided as per council norms.'
       },
       {
         id: 'adm-3',
         question: 'What documents are required for admission?',
-        answer: 'Required documents include 10th & 12th Marks-sheets, Transfer Certificate (TC), Migration Certificate, Character Certificate, Aadhaar Card, Passport size photographs, and Caste Certificate (if applicable).'
+        answer: 'Typically 10th & 12th mark-sheets, Transfer Certificate (TC), Migration Certificate, Character Certificate, Aadhaar Card, passport-size photographs, and Caste Certificate (if applicable). Our team will guide you on the exact list.'
       },
     ]
   },
@@ -34,18 +35,18 @@ const faqData = [
     questions: [
       {
         id: 'crs-1',
-        question: 'What nursing courses do you offer?',
-        answer: 'We offer B.Sc. Nursing (4 years), GNM (3 years), and ANM (2 years). All courses are recognized by the Indian Nursing Council (INC) and State Nursing Council.'
+        question: 'What nursing programs do you offer?',
+        answer: 'We offer M.Sc. Nursing (2 years), P.B.B.Sc. Nursing (2 years), B.Sc. Nursing (4 years), GNM (3 years), ANM (2 years), and D.M.L.T (2 years) — conducted per Indian Nursing Council & Gujarat Nursing Council guidelines and affiliated to Shri Govind Guru University.'
       },
       {
         id: 'crs-2',
         question: 'Is clinical training included in the curriculum?',
-        answer: 'Yes, clinical practical training is a vital part of our curriculum. Students undergo intensive clinical rotations at our affiliated super-specialty hospitals and community health centers.'
+        answer: 'Yes. Clinical practical training is a vital part of the curriculum. Students undergo rotations at Zydus Medical College & Hospital, Navadha Hospital, and community & primary health centers (CHCs/PHCs).'
       },
       {
         id: 'crs-3',
-        question: 'Are there any internship opportunities?',
-        answer: 'Integrated internships are part of the GNM and B.Sc. Nursing programs, allowing students to gain real-world experience under the supervision of expert healthcare professionals.'
+        question: 'Is the college recognized and affiliated?',
+        answer: 'The college is recognized by the Government of Gujarat, approved by the Gujarat Nursing Council, Ahmedabad, and academically affiliated to Shri Govind Guru University, Godhra.'
       }
     ]
   },
@@ -55,39 +56,39 @@ const faqData = [
     questions: [
       {
         id: 'cmp-1',
-        question: 'Do you provide hostel facilities?',
-        answer: 'Yes, we provide safe and comfortable on-campus hostel facilities for both male and female students, with 24/7 security and clean dining areas.'
+        question: 'Is the campus safe and secure?',
+        answer: 'Yes. Our Delsar, Dahod campus is a safe and student-friendly environment with CCTV surveillance and professional staff supervision.'
       },
       {
         id: 'cmp-2',
-        question: 'What extra-curricular activities are available?',
-        answer: 'We organize annual sports meets, cultural festivals, health camps, and community outreach programs to ensure the holistic development of our students.'
+        question: 'Is transport available?',
+        answer: 'Yes, transportation is available for students. Please contact the office for details of available routes and timings.'
       },
       {
         id: 'cmp-3',
-        question: 'Is there a library and lab facility?',
-        answer: 'Absolutely. We have a well-equipped central library with a vast collection of medical journals and books, along with state-of-the-art anatomy, microbiology, and nursing foundation labs.'
+        question: 'What facilities are available on campus?',
+        answer: 'The campus includes AC smart classrooms, digital projectors, science laboratories, a computer lab, library, nursing practical labs, and sports & cultural activities.'
       }
     ]
   },
   {
-    category: 'Fees',
+    category: 'Fees & Schooling',
     icon: <Wallet className="w-6 h-6" />,
     questions: [
       {
         id: 'fee-1',
-        question: 'What is the fee structure for different courses?',
-        answer: 'The fee structure varies by course. Please contact our admission office or download our latest prospectus for a detailed breakdown of tuition fees, lab fees, and other charges.'
+        question: 'What is the fee structure for different programs?',
+        answer: 'The fee structure varies by program. Please contact our admission office at ' + site.phoneDisplay + ' for a detailed breakdown of the tuition and other charges.'
       },
       {
         id: 'fee-2',
-        question: 'Are scholarship options available?',
-        answer: 'Yes, we offer merit-based scholarships for toppers and assist students in applying for various State and Central Government scholarships.'
+        question: 'Do you also run schools?',
+        answer: 'Yes. Sunrise Public School offers English & Gujarati medium education from Grade 1 to 8, and New Sunrise Public School covers Grades 9 to 12 with Science, Commerce and Arts streams.'
       },
       {
         id: 'fee-3',
-        question: 'Can I pay the fees in installments?',
-        answer: 'Yes, we provide flexible semester-wise or quarterly installment options to help ease the financial burden for students and parents.'
+        question: 'Do you offer coaching for higher secondary?',
+        answer: 'Yes. Science students (Classes 11 & 12) are coached in collaboration with Gyan Manjari Classes, Bhavnagar, and Commerce students receive CA/CS/CPA foundation preparation with Navkar Institute, Ahmedabad.'
       }
     ]
   }
@@ -257,11 +258,11 @@ export default function FAQPage() {
                 Our support team is always here to help you. Reach out to us via call or visit our campus for personal counseling.
               </p>
               <div className="flex flex-wrap justify-center gap-6">
-                <a 
-                  href="tel:+911234567890"
+                <a
+                  href={site.phoneHref}
                   className="bg-medical-dark text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest hover:bg-slate-800 transition-all shadow-xl shadow-medical-dark/20 flex items-center"
                 >
-                  Call Admissions: +91 12345 67890
+                  Call Admissions: {site.phoneDisplay}
                 </a>
                 <a 
                   href="/contact"
