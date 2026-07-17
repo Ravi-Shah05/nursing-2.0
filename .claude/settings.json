@@ -22,7 +22,15 @@
       "Read(//System/Library/Fonts/**)",
       "Read(//System/Library/Fonts/Supplemental/**)",
       "Bash(pkill -9 -f \"next start\")",
-      "Bash(pkill -9 -f \"next-server\")"
+      "Bash(pkill -9 -f \"next-server\")",
+      "Bash(python3)",
+      "Bash(mkdir -p content/source-docs archive)",
+      "Bash(cp \"sunrise website\"/*.pdf \"sunrise website\"/*.docx content/source-docs/)",
+      "Bash(rsync -a --exclude .DS_Store \"sunrise website/\" archive/source-originals/)",
+      "Bash(rsync -a --exclude .DS_Store \"sunrise activity photos/\" archive/source-originals/sunrise-activity-photos/)",
+      "Bash(rm -rf .next)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,2600 --screenshot=/tmp/g_new.png http://localhost:3118/gallery)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,2400 --screenshot=/tmp/a_new.png http://localhost:3118/activities)"
     ]
   }
 }

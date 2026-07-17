@@ -24,6 +24,7 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Nursing', href: '/nursing' },
     { name: 'School', href: '/school' },
+    { name: 'Activities', href: '/activities' },
     { name: 'Facilities', href: '/facilities' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
@@ -62,7 +63,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-x-5 xl:gap-x-7">
+          <div className="hidden lg:flex items-center gap-x-4 xl:gap-x-6 mr-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

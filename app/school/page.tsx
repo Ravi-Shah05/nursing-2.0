@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingCTAs from '@/components/FloatingCTAs';
-import { BookOpen, Users, ShieldCheck, Bus, Monitor, FlaskConical, Snowflake, Trophy } from 'lucide-react';
+import { BookOpen, Users, ShieldCheck, Bus, Monitor, FlaskConical, Snowflake, Trophy, ArrowRight, Target, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { site, schoolLeadership } from '@/lib/site';
@@ -93,6 +93,30 @@ export default function School() {
               </div>
             ))}
           </div>
+
+          {/* School Vision & Mission */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <div className="bg-medical-light/40 p-10 rounded-[2.5rem] border border-medical-primary/10">
+              <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                <Target className="w-7 h-7 text-medical-primary" />
+              </div>
+              <h3 className="text-2xl font-black text-medical-dark mb-4 tracking-tight">Our Vision</h3>
+              <p className="text-slate-700 leading-relaxed">To become one of the most trusted educational institutions by providing quality education, values, innovation, and career-oriented learning.</p>
+            </div>
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
+              <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                <Heart className="w-7 h-7 text-accent-dark" />
+              </div>
+              <h3 className="text-2xl font-black text-medical-dark mb-4 tracking-tight">Our Mission</h3>
+              <ul className="space-y-2.5 text-slate-700 leading-relaxed text-sm">
+                <li>• Deliver academic excellence.</li>
+                <li>• Develop confident and responsible citizens.</li>
+                <li>• Encourage creativity and innovation.</li>
+                <li>• Prepare students for higher education and successful careers.</li>
+                <li>• Promote discipline, ethics, and lifelong learning.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -132,6 +156,40 @@ export default function School() {
                 <span className="absolute bottom-6 left-6 text-white font-black tracking-tight text-lg">{g.label}</span>
               </div>
             ))}
+          </div>
+          <p className="text-center mt-10">
+            <Link href="/gallery" className="inline-flex items-center gap-2 text-medical-primary font-black uppercase tracking-widest text-xs hover:text-medical-dark transition-colors">
+              Explore the full campus gallery <ArrowRight className="w-4 h-4" />
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Student Activities teaser */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <div className="text-medical-primary font-black uppercase tracking-[0.2em] text-[10px] mb-4">Beyond Academics</div>
+            <h2 className="text-4xl font-black text-slate-900 tracking-tighter">Student Life at Sunrise</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { src: '/img/activities/activity-sports.jpg', label: 'Sports & Games' },
+              { src: '/img/activities/activity-science.jpg', label: 'Science Fairs' },
+              { src: '/img/activities/activity-music.jpg', label: 'Music & Arts' },
+              { src: '/img/activities/activity-smartclass.jpg', label: 'Smart Classes' },
+            ].map((g) => (
+              <Link key={g.src} href="/activities" className="relative aspect-3/4 rounded-[2rem] overflow-hidden shadow-lg group block">
+                <Image src={g.src} alt={g.label} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-medical-dark/75 to-transparent" />
+                <span className="absolute bottom-5 left-5 right-5 text-white font-black tracking-tight">{g.label}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Link href="/activities" className="inline-flex items-center gap-3 bg-medical-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-medical-dark transition-all shadow-xl shadow-medical-primary/20">
+              Explore Student Activities <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

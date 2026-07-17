@@ -49,6 +49,7 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-medical-primary transition-colors">Admissions 2026-27</Link></li>
               <li><Link href="/nursing" className="hover:text-medical-primary transition-colors">Nursing College</Link></li>
               <li><Link href="/school" className="hover:text-medical-primary transition-colors">Sunrise Public School</Link></li>
+              <li><Link href="/activities" className="hover:text-medical-primary transition-colors">Student Activities</Link></li>
               <li><Link href="/facilities" className="hover:text-medical-primary transition-colors">Campus Facilities</Link></li>
               <li><Link href="/gallery" className="hover:text-medical-primary transition-colors">Campus Gallery</Link></li>
               <li><Link href="/about" className="hover:text-medical-primary transition-colors">About Us</Link></li>

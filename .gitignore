@@ -8,3 +8,5 @@ coverage/
 
 # Source materials (kept locally, not deployed)
 sunrise website/
+# Full-resolution source originals (kept locally, not in git)
+archive/

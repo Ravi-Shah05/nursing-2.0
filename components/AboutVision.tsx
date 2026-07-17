@@ -5,6 +5,18 @@ import { motion } from 'motion/react';
 import { Target, Heart } from 'lucide-react';
 import Link from 'next/link';
 
+const objectives = [
+  "Prepare students to provide comprehensive nursing care using the nursing process.",
+  "Develop the ability to apply scientific knowledge and clinical skills in patient care.",
+  "Train students to function effectively as members of the healthcare team.",
+  "Foster critical thinking, problem-solving, and decision-making abilities.",
+  "Promote engagement in nursing research and evidence-based practice.",
+  "Enable graduates to take up leadership and managerial roles in healthcare settings.",
+  "Encourage students to participate in community health and outreach programs.",
+  "Uphold ethical, legal, and professional standards in nursing practice.",
+  "Prepare nurses for continuing education and advanced studies."
+];
+
 const missionPoints = [
   "Providing quality nursing education in accordance with the standards of the Indian Nursing Council and Gujarat Nursing Council.",
   "Preparing graduates to deliver holistic, evidence-based nursing care in diverse healthcare settings.",
@@ -91,6 +103,29 @@ export default function AboutVision() {
               <Link href="/contact" className="px-5 py-3 border border-slate-200 rounded-2xl text-slate-700 font-semibold hover:bg-white/50 transition">Contact Admissions</Link>
             </div>
           </motion.div>
+        </div>
+
+        {/* Objectives */}
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <div className="text-medical-primary font-black uppercase tracking-[0.2em] text-[10px] mb-4">What We Commit To</div>
+            <h3 className="text-3xl md:text-4xl font-black text-medical-dark tracking-tighter">Our Objectives</h3>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {objectives.map((obj, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: (i % 3) * 0.08 }}
+                viewport={{ once: true }}
+                className="flex items-start gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-100 hover:border-medical-primary/30 transition-colors"
+              >
+                <span className="w-9 h-9 rounded-xl bg-medical-primary text-white flex items-center justify-center font-black text-sm shrink-0">{i + 1}</span>
+                <p className="text-sm text-slate-700 leading-relaxed font-medium">{obj}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
