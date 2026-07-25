@@ -30,7 +30,22 @@
       "Bash(rsync -a --exclude .DS_Store \"sunrise activity photos/\" archive/source-originals/sunrise-activity-photos/)",
       "Bash(rm -rf .next)",
       "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,2600 --screenshot=/tmp/g_new.png http://localhost:3118/gallery)",
-      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,2400 --screenshot=/tmp/a_new.png http://localhost:3118/activities)"
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless --disable-gpu --hide-scrollbars --window-size=1440,2400 --screenshot=/tmp/a_new.png http://localhost:3118/activities)",
+      "Bash(npx next *)",
+      "Bash(npx -y playwright@1.62.0 --version)",
+      "Bash(npx -y playwright@1.62.0 install chromium --with-deps)",
+      "Bash(npm init *)",
+      "Bash(node shot.mjs)",
+      "Bash(lsof -ti:3000 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(disown)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:3000/about >/dev/null; do sleep 1; done')",
+      "Bash(curl -sf -o /dev/null http://localhost:3000/about)",
+      "Bash(break)",
+      "Bash(node shot3.mjs)",
+      "Bash(ls /Users/ravishah/Documents/nursing/public/img/ | grep -i \"shelin\\\\|damor\"; echo \"---\"; ls \"/Users/ravishah/Downloads/\" 2>/dev/null | grep -i \"shelin\\\\|damor\")",
+      "Read(//Users/ravishah/Downloads/**)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-ravishah-Documents-nursing/7347bcbe-dd59-4e92-83df-897106e1e6c6/scratchpad/partners-*.png /private/tmp/claude-501/-Users-ravishah-Documents-nursing/7347bcbe-dd59-4e92-83df-897106e1e6c6/scratchpad/shot3.mjs)"
     ]
   }
 }

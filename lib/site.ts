@@ -28,6 +28,7 @@ export const site = {
     { name: 'Zydus Medical College & Hospital, Dahod', focus: 'Comprehensive clinical training across specialties' },
     { name: 'Navadha Hospital', focus: 'Specialized psychiatric nursing training' },
     { name: 'Community & Primary Health Centers', focus: 'Community-based and rural healthcare training' },
+    { name: 'The Railway Main Hospital, Dahod', focus: 'General medicine and emergency care clinical training' },
   ],
 } as const;
 
@@ -161,7 +162,7 @@ export const leadership = [
   {
     name: 'Prof. Shelin Damor',
     role: 'Principal, College of Nursing',
-    photo: '/img/nursing-staff.jpeg',
+    photo: '/img/Prof. Shelin Damor.jpeg',
     quote: 'Step in with a dream, walk out with a purpose.',
     message:
       'We shape future nurses who are clinically proficient, deeply compassionate, and ethically strong — leaders who combine knowledge with kindness and skill with sensitivity.',

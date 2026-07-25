@@ -4,6 +4,7 @@
 @theme {
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
+  --font-serif: var(--font-serif);
   
   --color-medical-primary: #071658;
   --color-medical-dark: #050d36;

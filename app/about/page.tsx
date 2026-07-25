@@ -3,8 +3,9 @@ import Footer from '@/components/Footer';
 import FloatingCTAs from '@/components/FloatingCTAs';
 import { Target, Landmark, Heart, Award, MapPin } from 'lucide-react';
 import AboutVision from '@/components/AboutVision';
+import Leadership from '@/components/Leadership';
 import Image from 'next/image';
-import { site, leadership } from '@/lib/site';
+import { site } from '@/lib/site';
 
 export default function About() {
   return (
@@ -53,42 +54,38 @@ export default function About() {
       {/* Accreditation */}
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-lg">
-                <h2 className="text-2xl font-black text-medical-dark mb-4 tracking-tight">Recognized Excellence. Trusted Legacy. Future-Ready Education.</h2>
-                <p className="text-slate-600 leading-relaxed mb-6">Among the leading centers of nursing education in Dahod District — duly approved by the {site.recognition.council}, the apex regulatory authority — with academic affiliation to {site.recognition.university} for recognized qualifications and advanced career pathways.</p>
+          <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-lg">
+            <h2 className="text-2xl font-black text-medical-dark mb-4 tracking-tight">Recognized Excellence. Trusted Legacy. Future-Ready Education.</h2>
+            <p className="text-slate-600 leading-relaxed mb-6 max-w-3xl">Among the leading centers of nursing education in Dahod District — duly approved by the {site.recognition.council}, the apex regulatory authority — with academic affiliation to {site.recognition.university} for recognized qualifications and advanced career pathways.</p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-                  {[
-                    { icon: Award, title: 'Government Recognized', desc: 'Recognized by the Government of Gujarat for credibility and quality.' },
-                    { icon: Landmark, title: 'GNC Approved', desc: 'Approved by the Gujarat Nursing Council, Ahmedabad.' },
-                    { icon: Target, title: 'University Affiliated', desc: 'Affiliated to Shri Govind Guru University, Godhra.' },
-                    { icon: Heart, title: 'Clinical Exposure', desc: 'Training at reputed hospitals and community health centers.' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-medical-primary/10 flex items-center justify-center text-medical-primary shrink-0">
-                        <item.icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-medical-dark text-sm">{item.title}</h4>
-                        <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-2xl font-black text-medical-dark tracking-tight mb-6">Clinical Training Partners</h3>
-              {site.clinicalPartners.map((partner, i) => (
-                <div key={i} className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-medical-primary font-black shrink-0">{i + 1}</div>
-                  <div>
-                    <h4 className="font-black text-medical-dark">{partner.name}</h4>
-                    <p className="text-sm text-slate-500 font-medium">{partner.focus}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+              {[
+                { icon: Award, title: 'Government Recognized', desc: 'Recognized by the Government of Gujarat for credibility and quality.' },
+                { icon: Landmark, title: 'GNC Approved', desc: 'Approved by the Gujarat Nursing Council, Ahmedabad.' },
+                { icon: Target, title: 'University Affiliated', desc: 'Affiliated to Shri Govind Guru University, Godhra.' },
+                { icon: Heart, title: 'Clinical Exposure', desc: 'Training at reputed hospitals and community health centers.' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-medical-primary/10 flex items-center justify-center text-medical-primary shrink-0">
+                    <item.icon className="w-5 h-5" />
                   </div>
+                  <div>
+                    <h4 className="font-bold text-medical-dark text-sm">{item.title}</h4>
+                    <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h3 className="text-2xl font-black text-medical-dark tracking-tight mb-8 text-center">Clinical Training Partners</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {site.clinicalPartners.map((partner, i) => (
+                <div key={i} className="group bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:border-medical-primary/20 hover:-translate-y-1 transition-all duration-300">
+                  <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center text-medical-primary font-black mb-4 group-hover:scale-110 transition-transform duration-300">{i + 1}</div>
+                  <h4 className="font-black text-medical-dark leading-snug mb-1.5">{partner.name}</h4>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{partner.focus}</p>
                 </div>
               ))}
             </div>
@@ -97,32 +94,7 @@ export default function About() {
       </section>
 
       {/* Leadership Messages */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <span className="text-medical-primary font-black uppercase tracking-widest text-xs">Messages from the Leadership</span>
-            <h2 className="text-4xl font-black text-medical-dark mt-4 tracking-tighter">Nurturing Capability &amp; Compassion</h2>
-          </div>
-
-          <div className="grid gap-10 lg:grid-cols-2">
-            {leadership.map((leader) => (
-              <div key={leader.name} className="bg-slate-50 rounded-[2.5rem] p-8 md:p-10 border border-slate-100 flex flex-col shadow-sm">
-                <p className="text-medical-primary text-lg font-black italic mb-4 leading-snug">&ldquo;{leader.quote}&rdquo;</p>
-                <p className="flex-grow text-slate-600 leading-relaxed mb-8">{leader.message}</p>
-                <div className="mt-auto flex items-center gap-5">
-                  <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-md bg-medical-light">
-                    <Image src={leader.photo} alt={leader.name} fill className="object-cover" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-black text-medical-dark tracking-tight leading-none mb-1">{leader.name}</h4>
-                    <p className="text-medical-primary font-bold text-sm">{leader.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Leadership />
 
       <Footer />
       <FloatingCTAs />
